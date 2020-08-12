@@ -13,19 +13,11 @@
     "lint": "eslint src tests",
     "lint:fix": "npm run lint -- --fix",
     "test:load": "artillery run artillery.json",
-    "pre-push":"npm test"
   },
   "husky":{
-    "hook":{
-      "pre-push": "lint-staged"
+    "hooks":{
+      "pre-push": "npm test"
     }
-  },
-  "lint-staged":{
-    "*js":[
-      "npm test",
-      "npm run cover",
-      "git add"
-    ]
   },
   "keywords": [
     "Xendit"
