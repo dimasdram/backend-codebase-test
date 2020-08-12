@@ -15,9 +15,9 @@
     "test:load": "artillery run artillery.json"
   },
   "husky":{
-    "hook":{
-      "pre-commit": "npm test",
-      "pre-push":"npm cover"
+    "hooks":{
+      "pre-commit": "npm run cover",
+      "pre-push": "npm test"
     }
   },
   "keywords": [
