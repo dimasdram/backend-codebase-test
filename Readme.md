@@ -36,6 +36,9 @@ Give the example
 ...
 $ npm run test:load
 ```
+This use pre-commit, before commit you must check the unittest not error
+and use pre-push, before push you mush check the coverage
+
 
 ### And coding style tests
 
