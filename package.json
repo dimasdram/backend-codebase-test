@@ -1,0 +1,69 @@
+{
+  "name": "backend-coding-test",
+  "version": "1.0.0",
+  "description": "A coding assessment for EmpatKali backend interviews",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha \"tests/**/*.test.js\" --timeout=5000 --exit",
+    "start": "node index.js",
+    "cover": "nyc _mocha \"tests/**/*.test.js\" --recursive --exit",
+    "lint": "eslint src tests",
+    "lint:fix": "npm run lint -- --fix",
+    "test:load": "artillery run artillery.json"
+  },
+  "keywords": [
+    "Xendit"
+  ],
+  "author": "Bo",
+  "license": "ISC",
+  "dependencies": {
+    "artillery": "^1.6.1",
+    "body-parser": "^1.19.0",
+    "confidence": "^4.0.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "nyc": "^15.1.0",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "sinon": "^9.0.3",
+    "sqlite3": "^4.2.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.6.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-react": "^7.20.5",
+    "lint": "^0.7.0",
+    "mocha": "^6.1.4",
+    "supertest": "^4.0.2"
+  },
+  "nyc": {
+    "lines": 10,
+    "statements": 10,
+    "functions": 10,
+    "branches": 10,
+    "check-coverage": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "index.js"
+    ],
+    "reporter": [
+      "html",
+      "text",
+      "lcov",
+      "text-summary"
+    ],
+    "all": true,
+    "cache": true,
+    "report-dir": "./coverage"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}

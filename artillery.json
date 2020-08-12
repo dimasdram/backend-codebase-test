@@ -1,0 +1,67 @@
+{
+  "config": {
+    "target": "http://localhost:8010",
+    "phases": [
+      {
+        "name": "testing code",
+        "duration": 30,
+        "arrivalRate": 5
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "flow": [
+        {
+          "get": {
+            "url": "/health",
+            "headers":{
+              "authorization":"Basic ZW1wYXRrYWxpOjZkNDNmMWMyLWM2ZTctNDRiYy04MDYzLWNkMzE1M2M4ZDQ4ZQ="
+            }
+          }
+        },
+        {
+          "post": {
+            "url": "/rides",
+            "headers":{
+              "authorization":"Basic ZW1wYXRrYWxpOjZkNDNmMWMyLWM2ZTctNDRiYy04MDYzLWNkMzE1M2M4ZDQ4ZQ="
+            },
+            "json":{
+              "rider_name":"Dimas",
+              "driver_name":"Ramadhan",
+              "driver_vehicle":"mercy",
+              "start_lat":-6.9215178,
+              "start_long":107.6071852,
+              "end_lat":-6.9220823,
+              "end_long":107.6152694
+            }
+          }
+        },
+        {
+          "get": {
+            "url": "/rides",
+            "headers":{
+              "authorization":"Basic ZW1wYXRrYWxpOjZkNDNmMWMyLWM2ZTctNDRiYy04MDYzLWNkMzE1M2M4ZDQ4ZQ="
+            }
+          }
+        },
+        {
+          "get": {
+            "url": "/rides/1",
+            "headers":{
+              "authorization":"Basic ZW1wYXRrYWxpOjZkNDNmMWMyLWM2ZTctNDRiYy04MDYzLWNkMzE1M2M4ZDQ4ZQ="
+            }
+          }
+        },
+        {
+          "get": {
+            "url": "/rides-page?page=1&size=5",
+            "headers":{
+              "authorization":"Basic ZW1wYXRrYWxpOjZkNDNmMWMyLWM2ZTctNDRiYy04MDYzLWNkMzE1M2M4ZDQ4ZQ="
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
