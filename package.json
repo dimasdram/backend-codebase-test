@@ -14,8 +14,8 @@
     "lint:fix": "npm run lint -- --fix",
     "test:load": "artillery run artillery.json"
   },
-  "husky":{
-    "hooks":{
+  "husky": {
+    "hooks": {
       "pre-commit": "npm test",
       "pre-push": "npm run cover"
     }
@@ -38,6 +38,7 @@
     "passport-http": "^0.3.0",
     "sinon": "^9.0.3",
     "sqlite3": "^4.2.0",
+    "typescript": "^3.9.7",
     "winston": "^3.3.3"
   },
   "devDependencies": {

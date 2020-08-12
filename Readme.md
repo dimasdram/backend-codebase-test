@@ -4,13 +4,18 @@ This maybe can be codebase for backend with express
 A step by step series of examples that tell you have to get a development env running
 Say what the step will be
 - Create ENV file (.env) with this configuration:
+```
 PORT=
 BASIC_AUTH_USERNAME=
 BASIC_AUTH_PASSWORD=
+```
 - Then run this command
+```
 Give the example
+...
 $ npm install
 $ npm start
+```
 ### Running the tests
 Explain how to run the automated tests for this system
 ```sh
