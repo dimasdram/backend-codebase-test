@@ -25,9 +25,17 @@ $ npm run cover
 ### Running the Artillery
 Explain how to run Artillery
 make sure the server is running with:
+```sh
+Give the example
+...
 $ npm start
+```
 And open another CLI to run artillery
+```sh
+Give the example
+...
 $ npm run test:load
+```
 
 ### And coding style tests
 
