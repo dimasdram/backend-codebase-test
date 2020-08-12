@@ -16,9 +16,15 @@
   },
   "husky":{
     "hook":{
-      "pre-commit": "npm test",
-      "pre-push":"npm cover"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged":{
+    "*js":[
+      "npm test",
+      "npm run cover",
+      "git add"
+    ]
   },
   "keywords": [
     "Xendit"
