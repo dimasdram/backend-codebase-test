@@ -12,10 +12,11 @@
     "cover": "nyc _mocha \"tests/**/*.test.js\" --recursive --exit",
     "lint": "eslint src tests",
     "lint:fix": "npm run lint -- --fix",
-    "test:load": "artillery run artillery.json",
+    "test:load": "artillery run artillery.json"
   },
   "husky":{
     "hooks":{
+      "pre-commit": "npm run cover",
       "pre-push": "npm test"
     }
   },

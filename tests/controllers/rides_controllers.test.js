@@ -37,7 +37,7 @@ describe('Rides Controller', () => {
         data: {}
       });
       await ridesControllers.getRidesById(req, res);
-      ridesModel.getDataRides.restore();
+      ridesModel.getDataRdes.restore();
     });
   });
   describe('getAllRides', () => {
