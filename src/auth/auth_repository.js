@@ -4,12 +4,10 @@ class User {
     this.username = username;
     this.password = password;
   }
-
   isValidPassword(password) {
     return this.password === password;
   }
 }
-
 module.exports.findByUsername = (username, data) => {
   const userDatas = config.get('/basicAuthApi');
   let userData;
