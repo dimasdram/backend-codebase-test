@@ -1,9 +1,6 @@
 const sinon = require('sinon');
 const ridesControllers = require('../../src/controllers/rides_controllers');
 const ridesModel = require('../../src/model/rides_model');
-const assert = require('assert');
-const db = require('../../src/helpers/database');
-const { expectation } = require('sinon');
 
 describe('Rides Controller', () => {
   // let commandStub;
