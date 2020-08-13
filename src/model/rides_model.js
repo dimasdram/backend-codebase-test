@@ -26,7 +26,7 @@ const insertDataRidesQuery = (values,res) => {
 };
 
 const getDataRides = (payload,res) => {
-  db.all(`SELECT * FROM Rides WHERE rideID=${payload.id}`, (err, rows)=> {
+  db.all('SELECT * FROM Rides WHERE rideID=?',[payload.id], (err, rows)=> {
     if (rows.length === 0 ||err ) {
       let result = wrapper.error(new NotFoundError('Server Error data not found'));
       return wrapper.response(res, 'fail', result,'fail connect to server', httpError.NOT_FOUND);
@@ -56,7 +56,7 @@ const paginationData = (payload,res) => {
       let result = wrapper.error(new ConflictError('Server Error'));
       return wrapper.response(res, 'fail', result, 'fail connect to server', httpError.NOT_FOUND);
     }
-    db.all(`SELECT * FROM Rides LIMIT ${((page*size)-size)},${size}`, (err, rows) => {
+    db.all('SELECT * FROM Rides LIMIT ?,?',[((page*size)-size),size], (err, rows) => {
       if (err){
         logger.log(ctx,'fail to get rides lastID');
         let result = wrapper.error(new NotFoundError('data not found'));
