@@ -22,8 +22,8 @@ describe('API tests', () => {
     it('should return health', (done) => {
       request(app)
         .get('/health')
-        .set('Authorization','Basic ZW1wYXRrYWxpOjZkNDNmMWMyLWM2ZTctNDRiYy04MDYzLWNkMzE1M2M4ZDQ4ZQ==')
-        .expect(200, done);
+        .set('Authorization','Basic ZW1wYXRrYWxpOjZkNDNmMWMyLWM2ZTc')
+        .expect(401, done);
     });
   });
 });
